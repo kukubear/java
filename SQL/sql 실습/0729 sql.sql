@@ -1,0 +1,125 @@
+/* 실습1
+
+1. 고객에서 고객번호, 고객이름, 고객주소, 주문한 총 금액,  주문한 제품중에 가장비싼금액의 상품명을 추출하시오
+    - 주문한 총 금액: 주문상품에서 주문한 상품의 항목가격의 SUM
+
+   -주문한 제품중에 가장비싼 금액의 상품명: 주문상품에서 해당고객이 주문한 상품중 가장비싼 상품의 상품명
+
+2. 상품을주문한 고객중에 고객국가, 고객주별 주문수를 추출하시오
+    - 결과: 고객국가,고객주, 주문수
+
+3. 주문상품에서 고객주별 가장비싼 제품의 가격을 추출하시오
+   - 결과: 고객주, 비싼 제품의 가격*/
+   
+--1번
+/* 실습1
+1. 고객에서 고객번호, 고객이름, 고객주소, 주문한 총 금액,  주문한 제품중에 가장비싼금액의 상품명을 추출하시오
+   - 주문한 총 금액: 주문상품에서 주문한 상품의 항목가격의 SUM
+   - 주문한 제품중에 가장비싼 금액의 상품명: 주문상품에서 해당고객이 주문한 상품중 가장비싼 상품의 상품명*/
+   
+SELECT cust_id, cust_name, cust_address, 
+FROM customers c;
+
+
+
+SELECT (order_price*quantity), MAX(item_price)
+FROM  
+WHERE 
+GROUP BY;
+
+--2번
+/*2. 상품을주문한 고객중에 고객국가, 고객주별 주문수를 추출하시오
+    - 결과: 고객국가,고객주, 주문수*/
+SELECT cust_country, cust_state, COUNT(DISTINCT oi.order_num) order_num 
+FROM orderitems oi, orders o,customers c
+WHERE oi.order_num = o.order_num
+AND o.cust_id = c.cust_id
+GROUP BY cust_country, cust_state;
+
+--3번
+/*3. 주문상품에서 고객주별 가장비싼 제품의 가격을 추출하시오
+   - 결과: 고객주, 비싼 제품의 가격*/
+SELECT cust_state, MAX(item_price)
+FROM orderitems oi, orders o, customers c
+WHERE oi.order_num = o.order_num
+AND o.cust_id = c.cust_id
+GROUP BY cust_state;
+
+/*테이블조인 43page
+2. 공급업체와 제품을 조인하여 다음의 결과를 추출하시오 
+결과: 공급업체번호, 공급업체이름, 공급업체주소, 제품번호, 제품이름, 제품가격, 제품설명 
+조건: 공급업체별로 평균제품가격 이상인 제품 */
+SELECT v.vend_id, v.vend_name, v.vend_address, prod_id, prod_name, prod_price, prod_desc
+FROM vendors v, products p 
+WHERE v.vend_id = p.vend_id
+HAVING p.prod_price >=(SELECT AVG(prod_price)
+                        FROM products
+                        WHERE);
+
+SELECT vend_id, vend_name, vend_address
+FROM vendors
+
+/*3. 제품, 주문, 주문제품을 조인하여 다음의 결과를 추출하시오 
+결과: 주문번호, 주문일자, 제품번호, 제품이름, 제품가격, 항목가격 
+조건: 제품가격과 항목가격이 다른 제품 */
+SELECT o.order_num, o.order_date, p.prod_id, prod_name, prod_price, item_price
+FROM orderitems oi, products p, orders o
+WHERE oi.order_num = o.order_num
+AND oi.prod_id = p.prod_id
+AND p.prod_price <> oi.item_price;
+
+/*4. 공급업체, 제품, 주문제품을 조인하여 다음의 결과를 추출하시오 
+결과: 공급업체번호, 공급업체이름, 공급업체주소, 주문번호, 제품번호, 제품이름 */
+SELECT vend_id, vend_name, vend_address, order_num, prod_id, prod_name
+FROM 
+
+
+
+
+/*외부조인 
+아직 주문하지 않은 사람을 포함하여 모든 고객목록 추출 */
+SELECT c.cust_id, o.order_num
+FROM customers c,orders o
+WHERE c.cust_id(+) = o.cust_id;
+
+--ANSI SQL - 외부조인
+SELECT C.cust_id, o.order_num
+FROM customers c LEFT OUTER JOIN orders o
+    ON c.cust_id = o.cust_id;
+
+/*? 집계함수와 함께 조인을 사용 
+// 주문한 고객의 목록과 각 고객이 주문한 수량을 추출 */
+SELECT c.cust_id, COUNT(o.order_num) num_ord
+FROM customers c INNER JOIN orders o
+    ON c.cust_id = o.cust_id
+GROUP BY c.cust_id;
+
+--// 주문을 안한 고객도 포함하여 추출
+SELECT c.cust_id, COUNT(o.order_num) num_ord
+FROM customers c LEFT OUTER JOIN orders o
+     ON c.cust_id = o.cust_id
+GROUP BY c.cust_id;
+
+/*1. 제품과 주문항목을 조인하여 다음의 결과를 추출하시오 
+결과: 제품번호, 제품이름, 주문번호, 항목수량, 항목가격 
+조건: 모든 제품이 조회되어야 한다 */
+SELECT p.prod_id, p.prod_name, oi.order_num, oi.quantity, oi.item_price
+FROM products p, orderitems oi
+WHERE p.prod_id(+) = oi.prod_id;
+
+/*2. 제품을 주문한 고객 수와 주문 안 한 고객 수를 추출하시오 
+결과: 주문여부, 고객 수 */
+SELECT COUNT(cust_name)
+
+/*3. 다음의 조건에 따라 공급업체의 공급업체번호, 공급업체명, 공급업체주소를 추출하시오 
+조건: 주문된 상품이 2건이상이거나 제조하는 제품이 2개이상인 공급업체*/
+
+SELECT v.vend_id, v.vend_name, v.vend_address, oi.order_num, prod_id
+FROM Vendors v , orderitems oi 
+WHERE v.prod_id = oi.prod_id
+
+UNION
+SELECT vend_id, vend_name, vend_address
+FROM  Vendors 
+WHERE vend_id
+

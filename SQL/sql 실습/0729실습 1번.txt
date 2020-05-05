@@ -1,0 +1,8 @@
+SELECT cust_id, cust_name, cust_address,
+        (SELECT SUM(item_price*quantity), MAX(item_price)    
+        FROM orderitems)
+FROM customers c
+WHERE EXISTS(
+        SELECT cust_id
+        FROM orders
+        WHERE cust_id = c.cust_id);
