@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//stack 객체 만들기
+var stack = new Stack();
+
+console.log(stack.isEmpty());//결과는 true
+stack.push(5);
+stack.push(8);
+console.log(stack.peek());//결과는 8
+stack.push(11);
+console.log(stack.size());
+console.log(stack.isEmpty());
+stack.push(15);
+stack.pop();
+stack.pop();
+console.log(stack.size());
+stack.print();
+
+ function Stack(){
+	var arr = [];
+	this.push = function(a){
+		return arr.push(a);
+	}
+	this.pop = function(){
+		
+	}
+	this.isEmpty = function(){
+		if(this.arr == null){return true;}
+		else if(this.arr !=null){return false;}
+	};
+	
+	this.peek = function(){
+		return arr[arr.length-1];
+	};
+	
+	this.size = function (){
+		return arr.length;
+	}
+	this.print = function(){
+		for(var i in arr){
+			return arr[i];
+		}
+	}
+} 
+</script>
+</head>
+<body>
+
+</body>
+</html>

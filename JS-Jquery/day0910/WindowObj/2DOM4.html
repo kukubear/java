@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM2 예제</title>
+<script type="text/javascript">
+function myFunction(){
+	var list = document.getElementById("myList");
+	list.removeChild(list.childNodes[0]); //child제거
+}
+
+</script>
+</head>
+<body>
+<ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+<button onClick ="myFunction()">Try it</button>
+</body>
+</html>

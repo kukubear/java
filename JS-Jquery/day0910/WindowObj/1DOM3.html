@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM예제</title>
+<script type="text/javascript">
+//노드 아래의 모든 텍스트 얻기  
+//텍스트 노드를 이어 붙이고 문자열로 반환
+
+function getText(n){
+	var strings =[];
+	getStrings(n, strings);
+	return strings.join(" ");
+	function getStrings(n, strings){
+		if(n.nodeType == 3) strings push(n.data);
+		else if(n.nodeType == 1){
+		for(var m = n.firstChild; m!=null; m = m.nextSibling){
+			getStrings(m, strings);
+		}
+		}
+	}
+}
+</script>
+</head>
+<body>
+<body onload ="alert(countTags(document))">
+this is a <i>sample</i> document.
+</body>
+</html>

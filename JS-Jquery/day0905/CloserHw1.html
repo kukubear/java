@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var counter=(function(){
+	var cnt =0;
+	
+	return{
+		inc : function(){
+			cnt++;
+		},
+		dec : function(){
+			cnt--;
+		},
+		val:function (){
+			return cnt;
+		}
+	}
+})();
+console.log(counter.val());
+
+counter.inc(); //1증가
+counter.inc(); //1증가
+counter.dec(); //1감소
+console.log(counter.val()); //1출력
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

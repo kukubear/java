@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+//7. isExtensible : 객체에 새로운 프로퍼티를 추가할 수 있는지 여부
+//preventExtensions: 새로운 프로퍼티를 추가할 수 없도록 처리함
+
+var day = new Date(); // Date 객체를 생성함.
+//객체 day에 새로운 프로퍼티를 추가할 수 없도록 처리함
+Object.isExtensible(day); // true
+
+//해당객체에 새로운 프로퍼티를 추가할 수 없도록 설정함
+var myDat= Object.preventExtensions(day);
+Object.isExtensible(day); // false
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

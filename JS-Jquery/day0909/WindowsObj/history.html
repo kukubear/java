@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>history Obj</title>
+<script type="text/javascript">
+//업무에서 많이 씀
+function history_back(){
+	history.back();
+}
+function history_forward(){
+	history.forword();
+}
+function history_go(){
+	var page = document.frm.txtGo.value; //옛날 소스 혹은 외국 최신 소스?는 자바스크립트 활용
+										// 현재는 제이쿼리로 많이 씀
+										
+	history.go(page); 
+}
+
+</script>
+</head>
+<body>
+<form name='frm'>
+<input type="button" value="back" onClick="history_back()">
+<input type="button" value="forward" onClick="history_forward()">
+<!-- 스크립트를 중간에 쓸 수 있지만 잘 안씀 -->
+<br> history에 저장된 페이지 수 : <script> document.write(history.length);</script>
+<br> 이동하고 싶은 전 페이지 수 : <input type ="text" name="txtGo" value='-2' size="4">
+<input type ="button" value="go" onClick = "history_go()">
+
+</form>
+</body>
+</html>

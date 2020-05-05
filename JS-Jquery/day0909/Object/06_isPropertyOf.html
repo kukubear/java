@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+//6. isPropertyOf : 특정 객체의 프로토타입 체인에 현재 객체가 존재하는지 검사
+var day = new Date(); //Date 객체를 생성함
+//객체 day의 프로토 타입이 Date.prototype인지를 검사함.
+Date.prototype.isPrototypeOf(day);//true -> 이 객체의 프로토타입이 Date.prototype이니?
+Date.prototype.isPrototypeOf(new String());//false
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

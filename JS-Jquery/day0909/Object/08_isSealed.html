@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+//8. isSealed : 프로퍼티를 삭제할 수 없는지 여부
+//seal : 프로퍼티를 삭제할 수 없도록 처리함
+var person = {
+		name:'홍길동',
+		region:'서울특별시',
+		hobby:'기타'
+}
+Object.seal(person);
+delete person.name; // 불가
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

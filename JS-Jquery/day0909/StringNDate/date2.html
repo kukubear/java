@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var date1 = new Date(1991,11,9);
+var date2 = new Date(1991,11,9,2,24,23);
+//year, month, day, hours, minutes, seconds, milliseconds 순서
+var date3 = new Date(1991,11,9,2,24,23,1);
+
+//일주일 후의 시간 구하기
+var date4 = new Date();
+date4.setDate(date4.getDate()+7); // 현재시간에서 7을 더하기
+
+
+//toXXXString()
+var output='';
+output += '*toDateString : '+date4.toDateString()+'\n';
+output += '*toGMTString : '+date4.toGMTString()+'\n';
+output += '*toLocaleDateString : '+date4.toLocaleDateString() +'\n';
+output += '*toLocaleString : '+date4.toLocaleString()+'\n';
+output += '*toLocaleTimeString : '+date4.toLocaleTimeString()+'\n';
+output += '*toString : '+date4.toString()+'\n';
+output += '*toTimeString : '+date4.toTimeString()+'\n';
+output += '*toUTCString : '+date4.toUTCString()+'\n';
+alert(output);
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

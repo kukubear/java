@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//클로저를 사용하여 Counter만들기 -> 아래 소스는 외부에서 counter 값을 변경할 수 있음
+uniqueInteger.counter=0;
+function uniqueInteger(){
+	return uniqueInteger.counter++;
+}
+
+//클로저 이용한 해결소스
+var uniqueID = (function(){
+	var id=0;
+	return function(){return id++;}
+});
+
+alert(uniqueID()());
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

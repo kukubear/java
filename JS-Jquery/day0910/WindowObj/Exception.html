@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exception</title>
+<script type="text/javascript">
+//error1
+try{
+	try{
+		throw new Error("oops");
+		//throw 'error입니다'
+	}
+	finally{
+		console.log("finally");
+	}
+	
+}
+catch(ex){
+	console.log("outer",ex.message);
+}
+//error2
+try{
+	var array = new Array(999999999);
+}catch(exception){
+	console.log('11 :'+exception.message);
+	console.log('22 :'+exception.name);
+	
+}
+//error3
+try{
+	try{
+		throw new Error("oops");
+	}catch(ex){
+		console.error("inner", ex.message);
+	}
+	finally {
+		console.log("finally");
+	}
+}
+catch(ex){
+	console.error("outer",ex.message);
+}
+//error4
+try{
+	try{
+		throw new Error("oops");
+		throw ex;
+	}
+	finally{
+		console.log("finally");
+		
+	}
+}
+catch(ex){
+	console.error("outer", ex.message);
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

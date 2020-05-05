@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//변수명이 동일할 때는 가장 가까운 범위 의 변수를 참조한다
+var scope =10;
+function scopeExam(){
+	var scope = 30;
+	console.log("scope = "+scope);
+}
+scopeExam();//20
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+
+//1-2. defineProperties(): 한번에 여러 개의 Property추가
+var object={};
+Object.defineProperties(object,{
+	name:{value:'김길동'},
+	region:{value:'서울특별시'}
+});
+
+//2.get, set (getter, setter임)
+var object={};
+var value='test';
+Object.defineProperty(object,'name',{
+	get:function(){
+		console.log("getter");
+		return value;
+	},
+	set:function(newValue){
+		console.log("setter");
+		value = newValue;
+	}
+});
+object.name ='ALPHA'; // setter호출
+console.log(object.name); //getter호출
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

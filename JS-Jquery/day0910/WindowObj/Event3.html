@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Event Ex 2</title>
+<script type="text/javascript">
+var b = document.myform.mybutton;
+var oldHandler = b.onclick;
+function newHandler(){
+	
+}
+b.onclick = function(){
+	oldHandler();
+	newHandler();
+}
+</script>
+</head>
+<body>
+<form name= "myform" action ='action.do' onsubmit ="if(this.elements[0].value.length == 0) return false;">
+<input type="text">
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM2 예제</title>
+<script type="text/javascript">
+function myFunction(){
+	var myobj = document.getElementById("demo");
+	myobj.remove(); //노드제거
+}
+
+</script>
+</head>
+<body>
+<p>The remove() method removes the element from the DOM</p>
+<p id="demo">Click the button, and this paragraph will be removed from the DOM.</p>
+<button onClick="myFunction()">Remove paragraph</button>
+</body>
+</html>

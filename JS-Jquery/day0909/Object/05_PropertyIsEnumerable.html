@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+//5.propertyIsEnumerable : hasOwnProperty()가 true이면서 열거가능
+function Dog(color, name, age, family){
+	this.color =color;
+	this.name = name;
+	this.age = age;
+}
+var myDog = new Dog("흰색", "마루",1);
+//color 프로퍼티의 Enumerable 속성을 false로 설정함. 
+Object.defineProperty(myDog,'color',{enumerable :false}); // 내 속성이지만 열거가 안됨
+myDog.propertyIsEnumerable("color");//false
+myDog.propertyIsEnumerable("name"); // true
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM</title>
+<script type="text/javascript">
+ function loadData(){
+	//getElementById : Id를 통해 특정 요소노드의 Object를 리턴
+	alert(typeof document.getElementById("purchases")); // object
+
+	//getElementsByTagName : 특정태그를 사용하는 요소노드들을 배열로 리턴
+	var items = document.getElementsByTagName("li"); //li tag에 대한 목록 리스트
+	for (var i = 0; i < items.length; i++) {
+		alert(typeof items[i]);
+	}
+	//문서내의 모든 요소노드의 개수를 알고 싶으면
+	alert("모든 요소노드의 개수" + document.getElementsByTagName('*').length);
+
+	//특정 요소노드 하위로 얼마나 많은 요소노드가 있는지 확인
+	var shopping = document.getElementById("purchases");
+	var items2 = shopping.getElementsByTagName("*");
+	alert("특정 요소 노드 하위 : " + items2);
+}
+</script>
+</head>
+<body onload ="loadData()">
+
+	<h1>쇼핑목록</h1>
+	<p title="a gentle reminder">물건을 선택해 주세요.</p>
+	<ul id="purchases">
+		<li>땅콩</li>
+		<li>치즈</li>
+	</ul>
+	
+</body>
+</html>

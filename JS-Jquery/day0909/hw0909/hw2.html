@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//2. Queue 객체를 만들기
+
+
+var queue = new Queue();
+console.log(queue.isEmpty()); //결과는 true
+queue.enqueue("John");
+queue.enqueue("Jack");
+queue.print(); // 결과는 John,Jack
+queue.enqueue("Camila");
+queue.print(); // 결과는 John,Jack,Camila
+console.log(queue.size()); //결과는 3
+console.log(queue.isEmpty()); //결과는 false
+queue.dequeue();
+queue.dequeue();
+queue.print(); // 결과는 Camila
+
+function Queue(){
+	var arr =[];
+	
+	this.enqueue = function(a){
+		return arr.push(a);
+	};
+	
+	this.print = function(){
+		for(var i in arr){
+			return arr[i];
+		}
+	};
+	
+	this.dequeue = function(a){
+		return arr.shift();
+	};
+	
+	this.size = function(){
+		return arr.length;
+	};
+	
+	this.isEmpty = function(){
+		if(arr == null){return true;}
+		else if(arr!=null){return false;}
+	};
+	
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

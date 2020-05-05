@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+//1. defineProperty()
+var object ={};
+Object.defineProperty(object, 'name',{
+	value:'홍길동', /*속성값 -> 객체로 부여*/
+	writable : false, /*속성값 변경여부*/
+	enumerable:false, /*for in문 검색여부 -> true여야 검색가능*/
+	configurable:true /*속성설정 변경여부*/
+});
+object.name='OTHER';
+for(var i in obejct){
+	console.log(i+':'+object[i]);
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

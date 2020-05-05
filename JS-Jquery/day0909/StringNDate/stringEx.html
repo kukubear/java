@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var str = "Please locate where 'locate' occurs!";
+
+var pos1 = str.indexOf("locate");
+var pos2 = str.indexOf("locate", 15); // 시작 index존재
+var pos3 = str.lasIndexOf("locate");
+
+var str2 = "Apple, Banana, Kiwi";
+var res1 = str2.slice(7,13);
+var res2 = str2.slice(7);//index 7이후의 String
+var res3 = str2.substring(7,13);
+
+var str3 = "Please visit Microsoft!";
+var txt1 = str.replace("Microsoft","test");
+
+
+var text1 = "HelloWorld!"; 
+//String -> String은 원소스를 바꿀수 없지만 StringBuffer는 변경가능 스크립트에서도 String은 자바와 동일
+var text2 = text1.toUpperCase();
+
+var text3 = "Hello";
+var text4 = "World";
+var text5 = text3.concat("",text2);
+
+var str4 = "		HelloWorld!			";
+alert(str4.trim());
+
+var str5 = "HELLOWORLD";
+str5.charAt(0);
+str5.charCodeAt(0); // utf-16리턴
+str5[0];//H 변경안됨
+
+var txt2 = "a,b,c,d,e"; //String
+txt2.split(",");//arr로 리턴
+
+var txt3 ="Hello"; // String
+txt3.split(""); //문자열을 하나씩 arr로
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

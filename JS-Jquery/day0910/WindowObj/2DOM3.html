@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM2 예제</title>
+<script type="text/javascript">
+function myFunction(){
+	document.getElementsByTagName("H1")[0].removeAttribute("class"); // 속성제거
+	
+}
+
+</script>
+</head>
+<body>
+
+<p id="demo">Click the button to remove the class attribute from the h1 element.</p>
+<button onClick="myFunction()">Try it!</button>
+</body>
+</html>

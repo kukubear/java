@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Linked List 객체 만들기</title>
+<script type="text/javascript">
+var list = new LinkedList();
+list.append(15); // 맨뒤에 추가
+list.print(); //15
+console.log(list.indexOf(15)); // value의 index를 리턴
+
+list.append(10);
+list.print(); //15,10
+console.log(list.indexOf(10));//1
+
+list.append(13);
+list.print();//15,10,13
+
+console.log(list.indexOf(13)); //2
+console.log(list.indexOf(10));//1
+
+list.append(11);
+list.append(12);
+list.print();//15,10,13,11,12
+
+console.log(list.removeAt(1)); // 특정 index를 삭제
+list.print()
+console.log(list.removeAt(3));
+list.print();
+
+list.append(14);
+list.print();
+list.insert(0,16); // 특정 index에 추가
+list.print();
+list.insert(1,17);
+
+function LinkedList(){
+	
+	var arr =[];
+	var newArr = [];
+	var newArr=[];
+	var finalArr =[];
+	
+	this.append = function(a){
+		return arr.push(a);
+	};
+	
+	this.print = function(){
+		for(var i in arr){
+			return console.log("print = "+arr);
+		}
+	};
+	
+	// value의 index를 리턴
+	this.indexOf = function(/*number(integer)*/a){
+		for(var i in arr){
+			if(arr[i] == a){
+				return i;
+			}
+		}
+	};
+	
+	// 특정 index를 삭제
+	this.removeAt = function(/*특정index*/a){
+		
+		for(var i in arr){
+				if(arr[i] == null){ 
+				throw "없는 값입니다.";
+				}else if(i == 0 && i == a){
+					delete arr[i];
+					newArr = arr.slice(1, arr.length-1);
+					arr = newArr;
+					console.log(arr);
+					
+					return arr;
+				} else if(i == arr.length-1 && i == a){
+					delete arr[i];
+					newArr = arr.slice(0, arr.length-2);
+					arr = newArr;
+					
+					console.log(arr);
+					
+					return arr;
+				} else if(i == a) {
+					delete arr[i];
+					
+					newArr = arr.slice(0, i-1);
+					newArr2 =  arr.slice(i+1, arr.length-2);
+					finalArr = newArr.concat(newArr2);
+					
+					arr = finalArr;
+					console.log(arr);
+					return arr;
+				}//if~else end
+		}//for end
+		
+	};
+	this.insert = function(/*index*/a, /*배열에 넣을 값*/b){
+		for(var i in arr){
+			if(a == i && a == 0){
+				return arr.unshift(b);
+			}else if(typeof arr[a] == null ||typeof arr[a] == undefined){
+				arr[a] = b;
+				return arr;
+			}else if(typeof arr[a] != null ||typeof arr[a] != undefined){
+				var newArr = arr.slice(a, arr.length-1); 
+				arr.push(b);
+				var finalArr = arr.concat(newArr);
+				arr = finalArr;
+				return arr;
+				
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

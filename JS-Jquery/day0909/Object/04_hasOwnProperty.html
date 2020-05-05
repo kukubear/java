@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+
+
+//4. hasOwnProperty
+function Dog(color, name, age, family){
+	this.color =color;
+	this.name = name;
+	this.age = age;
+	this.family = family;
+	this.breed = function(){
+		return this.color +" "+ this.family;
+	} 
+}
+var myDog = new Dog("검정색","곰",3,"불독"); 
+myDog.hasOwnProperty("color"); // true // 내가 들고 있는 프로퍼티냐고 물어보는 것임
+myDog.hasOwnProperty("class"); // 상속받은 프로퍼티이므로, false를 반환함.
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

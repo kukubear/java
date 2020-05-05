@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//3. Set 객체를 만들기
+var set = new Set();
+set.add(1);
+console.log(set.values()); //결과는 ["1"]
+console.log(set.has(1));   //결과는 true
+console.log(set.size());   //결과는 1
+set.add(2);
+console.log(set.values()); //결과는 ["1", "2"]
+set.remove(1);
+console.log(set.values()); //결과는 ["2"]
+set.clear();
+console.log(set.values()); //결과는 []
+
+function Set(){
+	var arr =[];
+	
+	this.add = function(a){
+		for(var i in arr){
+			if(arr[i]!=a){
+		return arr.unshift(a);
+			} // if end
+		} // for end
+	}; // this.add end
+	
+	this.values = function(){
+		for(var i in arr){
+			return arr[i];
+		} // for end
+	};//values end 
+	
+	//수정필요
+	this.has = function(/*int*/ a){
+		for(var i in arr){
+		if(arr[i]== a ){return true;}
+		else{return false;}
+		} //for end
+		};//has end
+	
+		
+	this.size = function(){
+		return arr.length;
+	};
+	
+	this.remove = function(/*int*/ a){
+		for(var i in arr){
+		if(arr[i] == a){
+		return delete arr[i];
+			}
+		}
+	};
+	
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

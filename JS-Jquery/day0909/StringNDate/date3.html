@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//날짜 간격 구하기
+var now = new Date();
+var before = new Date('December 9, 1991');
+
+//날짜 간격을 구합니다.
+var interval = now.getTime() - before.getTime();
+interval = Math.floor(interval/(1000*60*60*24));
+
+//출력
+alert('interval : '+interval+'일');
+
+//프로토타입에 날짜 간격 구하는 메소드 추가
+Date.prototype.getInterval = function(otherDate){
+	//변수를 선언
+	var interval;
+	//양수로 날짜 간격을 구하려고 조건문을 사용합니다.
+	if(this>otherDate){
+		interval = this.getTime() - otherDate.getTime();
+	}else{
+		interval = otherDate.getTime()- this.getTime();
+	}
+	//리턴하기
+	return Math.floor(interval / (1000*60*60*24));
+};
+
+//변수를 선언
+var now = new Date();
+var before = new Date('December 9, 1991');
+
+//출력하기
+alert('Interval : '+now.getInterval(before)+'일');
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

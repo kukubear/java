@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>primitive type</title>
+<script type="text/javascript">
+//기본 자료형에 메서드 추가
+var primitiveNumber = 273;
+var objectNumber = new Number(273);
+
+//Number 객체에 메소드 추가 하면 number dataType인 primitiveNumber도 추가된 메서드 사용가능
+Number.prototype.method =function(){
+	return 'Method on Prototype';
+};
+
+//메서드를 실행합니다.
+var output ='';
+output += primitiveNumber.method()+'\n'
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+//9. keys : 자신의 속성을 배열로 리턴(열거 가능만)
+//getOwnPropertyNames : 모든 속성을 배열로 리턴
+var object = {name:'윤인성'};
+Object.defineProperty(object,'region', {
+	value:'서울특별시'
+});
+console.log(Object.keys(object));
+console.log(Object.getOwnPropertyNames(object));
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

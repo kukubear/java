@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object 객체 예제</title>
+<script type="text/javascript">
+
+//3. create 기존의 객체를 복제하고 새로운 속성을 추가하여 객체 생성
+//빈 객체를 기반으로 name, region속성을 추가하여 객체 생성
+var object =Object.create({},{
+	name:{value:'김길동', enumerable:true}, // 객체 안에 객체로 
+	region:{value:'서울특별시',enumerable:true}
+});
+console.log(Object.keys(object));
+var person = Object.create(object, {
+	gender:{value:'남자', enumerable:true},
+	hobby:{value :'기타', enumearble:true}
+});
+console.log(Object.keys(person));
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOMex3</title>
+<script type="text/javascript">
+var toolTip = new Tooltip();
+function show(){
+	toolTip.show("ToolTip입니다.",100,100);
+}
+function hide(){
+	toolTip.hide();
+}
+function Tooltip(){
+	this.tooltip = document.createElement("div");
+	this.tooltip.style.position ="absolute";
+	this.tooltip.style.visibility ="hidden"; // hidden상태로 시작
+	this.tooltip.className="tooltopShadow"; //css 조작 가능하도록 css 클래스 이름 지정
+	
+	this.content = document.createElement("div");//내용 부분을 위한 div 생성
+	this.tooltip.stype.position = "relative"; //상대위치로 지정
+	this.content.className ="tooltipContent";
+	
+	this.tooltip.appendChild(this.content); //그림자 위에 내용을 추가
+}
+
+Tooltip.prototype.show = function(text, x, y){
+	this.content.innerHTML = text; //tooltip의 txt설정
+	this.tooltip.style.left = x+'px';
+	this.tooltip.style.top = y+'px';
+	this.tooltip.style.visibility ='visible'; //보이게 한다.
+	
+	//아직 툴팁이 문서에 추가되지 않았다면 이를 문서에 추가
+	
+	if(this.tooltip.parentNode != document.body){
+		document.body.appendChild(this.tooltip);
+	}
+	
+};
+
+Tooltip.prototype.hide =function(){
+	this.tooltip.style.visibility = "hidden"; //감춘다
+	
+}
+
+</script>
+</head>
+<body>
+<button onClick="show()">show</button>
+<button onClick="hide()">hide</button>
+
+</body>
+</html>
