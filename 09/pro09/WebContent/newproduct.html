@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>제품 추가 </title>
+<script type = "text/javascript">
+var frmNew = document.frmNew;
+var prod_id = frmNew.prod_id.value;
+var prod_name = frmNew.prod_name.value;
+var prod_price = frmNew.prod_price.value;
+var prod_desc = frmNew.prod_desc.value;
+var vend_name = frmNew.vend_name.value;
+
+if (prod_id.length == 0 || prod_id == "") {
+	alert ("제품 번호는 필수 입니다.");
+}else if(prod_name.length ==0 || prod_name == ""){
+	alert ("제품명은  필수 입니다.");
+}else if(prod_price ==0 || prod_price == ""){
+	alert ("제품 가격은 필수 입니다.");
+}else if (prod_desc.length ==0 || prod_desc == ""){
+	alert ("제품 설명은 필수 입니다.");
+}else if (vend_name.length ==0 || vend_name == ""){
+	alert ("공급업체명은 필수 입니다.");
+}else{
+	frmMember.method ="get";
+	frmMember.action ="product";
+	frmMember.submit();
+}
+}
+</script>
+</head>
+<body>
+<form name = "frmNew" method ="get" action="product" encType="utf-8">
+제품 번호 : <input type = "text" name = "prod_id"><br>
+제품 이름 : <input type = "text" name = "prod_name"><br>
+제품 가격 : <input type = "text" name = "prod_price"><br>
+제품 설명 : <input type = "text" name = "prod_desc"><br>
+공급업체 명 :  <input type = "text" name = "vend_name"><br>
+<input type="button" value="제품추가" >
+<input type ="hidden" value ="command" >
+</form>
+</body>
+</html>

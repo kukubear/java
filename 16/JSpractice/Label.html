@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+outerloop:
+	for(var i=0; i<10; i++){
+		innerloop:
+			for(var j=0;j<10;j++){
+				if(j>3) break;
+				if(i==2) break innerloop;
+				if(i==4) break outerloop;
+				console.log("i = "+i+", j = "+j);
+			}
+	}
+	console.log("Final i ="+i+", j = "+j);
+	
+	var array = ['포도','사과','바나나','망고'];
+	array.forEach(function(item){ console.log(item);});
+
+	for(var i of array){
+		alert(i);
+	}
+	
+var mySymbol1 = Symbol('mySymbol');
+var mySymbol2 = Symbol('mySymbol');
+mySymbol1 === mySymbol2; //false
+var prop2 = Symbol('prop2');
+var obj ={
+		prop1:1,
+		[prop2]:2,
+		
+};
+for(var key in obj){
+	console.log(key); //prop1만 출력
+}
+obj[prop2]; // 2,대괄화로만 접근가능
+</script>
+</head>
+<body>
+
+</body>
+</html>

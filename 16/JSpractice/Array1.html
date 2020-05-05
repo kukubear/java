@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array1</title>
+<script type="text/javascript">
+var arrayA = [0,1,2,3];
+arrayA.push(4); // 맨 뒤에 추가
+arrayA.pop();//맨 뒤 항목 제거 후 반환
+arrayA.unshift(-1); // 맨 앞에 추가
+arrayA.shift(); // 맨 앞에 항목제거 후 반환
+delete arrayA[0]; // 첫번째 요소를 undefined로 변환 =>object에서는 속성제거
+
+var arrayB =['one','two','three'];
+arrayB.splice(1,2); // 인덱스 1위치에서 2개의 항목제거
+arrayB.spilce(1,2,'four','five'); //항목을 제거하고 2개의 항목을 인덱스 1에 추가
+
+var arrayC = ['one','two','three'];
+var arrayD = ['four','five'];
+var arrayE = arrayC.concat(arrayD); //array연결하기
+
+var arrayF=['one','two','three'];
+var arrayG= arrayF.slice(1,2); //원본은 유지하고 인덱스 1에서 2개의 항목으로 배열을 만들어 리턴
+
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

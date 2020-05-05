@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>change Types in JS</title>
+<script type="text/javascript">
+function join(){
+	//숫자를 스트링으로 바꾸기
+	var tt =2;
+	tt +="";
+	alert(typeof tt); // result : string
+	
+	var tt2 = 123456.789;
+	tt2 = tt2.toString();
+	alert(typeof tt2); // result : String
+	
+	var tt3 = 123456.789;
+	tt3 = tt3.toFixed(0);
+	alert(typeof tt3);
+	
+	var tt4 = 123456.789;
+	tt4 = tt4.toString(2);
+	alert(typeof tt4);
+	
+	//boolean과 숫자 연산
+	var tt5 = true;
+	tt5 = tt5+1; // 2
+	alert(typeof tt5); // result : number
+	
+	//boolean과 문자연산
+	var tt6 = true;
+	tt6 = tt6+"1"; // true1
+	alert(typeof tt6); //result:boolean
+	
+	
+	//스트링을 숫자로 바꾸기
+	var tt7 = "2";
+	tt7 *=1;
+	alert(typeof tt7);
+	
+	var tt8 = "2";
+	tt8 = Number(tt8); // 숫자만 변환가능
+	alert(typeof tt8);
+	
+	var tt10 = "2";
+	tt8 = Number(tt8); // 숫자만 변환가능
+	alert(typeof tt8);
+	
+	//숫자를 스트링으로 바꾸기
+	var tt9 = 2;
+	tt9 = String(tt9);
+	alert(typeof tt9); 
+	
+	
+	
+	}
+
+</script>
+</head>
+<body>
+<input type ="button" value="실행하기" onClick="join()">
+
+</body>
+</html>

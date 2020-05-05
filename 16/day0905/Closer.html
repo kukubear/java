@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function makefunc(x){
+	return function(){return x;}
+	}
+
+	//리턴된 함수륿 배열 요소에 저장
+	var a =[makefunc('x'), makefunc('y'),makefunc('z')];
+	alert(a[0]); // function(){return x;} 출력
+	alert(a[1]); // function(){return x;} 출력
+	alert(a[2]); // function(){return x;} 출력
+	
+	alert(a[0]()); //x출력
+	alert(a[1]()); //y출력
+	alert(a[2]()); //z출력
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

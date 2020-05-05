@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var arr =[1,1,5,4,8,7,3,3,2,2,5,9,0];
+var a = 2;
+var b = 11;
+var s ="Hellow World!!";
+
+/*1. 단어 s의 가운데 글자를 반환하는 함수 (단어의 길이가 짝수라면 가운데 두 글자를 반환)*/
+function calculate1(s) {
+	if(s.length%2==0){
+		var tokS = s.substring((s.length/2-2),(s.length/2-1))
+	}
+}
+
+/*2. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져 있습니다
+배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하여 리턴하는 함수*/
+
+function calculate2(arr) {
+	
+	for(var i in arr){
+		if(arr[i] == arr[i+1]){
+			delete arr[i];
+			if(arr[i] !=null && arr[i] != undefined){
+				console.log(arr[i]);
+				return arr[i];
+			}
+		}
+		
+	}
+	
+}
+/*3. 두 정수 a, b가 주어졌을 때 a와 b 사이에 속한 모든 정수의 합을 리턴하는 함수*/
+function calculate3(a, b) {
+	var s =0;
+	for(var i = Math.min(a,b); i<= Math.max(a,b); i++)
+		s +=i;
+	return s;
+}
+
+/*4. 정수를 담고 있는 배열 arr의 평균값을 return하는 함수*/
+function calculate4(arr) {
+	var s=0;
+	var tt=0;
+	
+	for(var i in arr) {s += arr[i];}	
+	
+	tt = s/arr.length;
+	alert(tt);
+	return tt;
+	
+}
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <script type="text/javascript">
+  function fn_validate(){
+   var frmCust = document.frmCust;
+   var input_id = frmCust.input_id.value;
+   
+   if(cust_id.length == 0 || cust_id == ""){
+    alert("고객번호는 필수입니다.");
+   } else {
+    frmLogin.method = "get";
+    frmLogin.action = "cust";
+    frmLogin.submit();
+   }
+  }
+ </script>
+<title>고객 주문 정보 조회</title>
+</head>
+<body>
+ <form name = "frmCust" method = "get" action="cust" encType="UTF-8">
+     고객 번호 : <input type = "text" name = "input_id"><br>
+  <input type = "button" onClick="fn_validate()" value = "조회">
+  <input type = "reset" value = "다시 입력"/>
+ </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//변수 선언문을 끌어올린다.
+function hoistingExam(){
+	console.log("value = "+value);//아래 선언도니 변수를 사용, undefined 출력
+	var value= 10;
+	console.log("value = "+value);
+}
+hoistingExam();
+</script>
+</head>
+<body>
+
+</body>
+</html>

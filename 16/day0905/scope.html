@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function scopetest(){
+	var a =0;
+	if(true){
+		var b =0;
+		for(var c =0; c<5; c++){
+			console.log("c1 = "+c);
+		}
+		console.log("c2 = "+c);
+	}
+	console.log("b = "+b); //block 외부에서 b에 접근가능 -> 블록단위 유효범위 없다.
+}
+alert(scopetest()); // undefined
+</script>
+</head>
+<body>
+
+</body>
+</html>

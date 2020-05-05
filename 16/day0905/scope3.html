@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+//var 키워드 생략 시 전역 변수로 설정
+function scopeExam(){
+	scope = 20;
+	console.log("scope = "+scope);
+}
+function scopeExam2(){
+	console.log("scope = "+scope);
+}
+scopeExam();
+scopeExam2();
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

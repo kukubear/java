@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array3</title>
+<script type="text/javascript">
+var arrayA=['b','c','a'];
+arrayA.sort();//정렬하기
+arrayA.reverse(); //역순으로 정렬하기
+
+var arrayB =[40,100,1,5,25,10];
+arrayB.sort(function(a,b){return a-b}); // 정렬기준 함수를 매개변수로 전달
+
+var txt="";
+var numbers =[45,4,9,16,25];
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+function myFunction(value, index, array){ //value(요소), array(전체배열)
+	txt=txt+value+"<br>";
+	
+}
+var numbers = [4,9,16,25,29];
+var first = numbers.find(myFunction); // 25, 함수 조건을 만족하는 첫번째 요소값,findindex존재
+document.getElementById("demo").innerHTML ="First Number over 18 is "+first;
+function myFunction(value, index, array){
+	return value > 18;
+}
+//배열 처럼작동하는 유사배열을 내부적으로 많이 사용
+var a ={}; //객체 선언
+//1.유사배열을 만들기 위해 property 추가
+var i =0;
+while(i<10){
+	a[i]=i*i;
+	i++;
+}
+a.length=i;
+//2.실제 배열인 것처럼 사용
+var total =0;
+for(var j = 0; j<a.length; j++) 
+	total+= a[j];
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

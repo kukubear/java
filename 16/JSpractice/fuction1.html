@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//함수를 전역변수에 할당
+fucntion square(x){return x*x;}
+var a = square(4);
+var b = square;//b는 함수를 가리킴
+var c = b(5);
+
+//함수를 객체 property에 할당
+var o = new Object();
+o.square = fucntion(x){return x*x;}
+var y = o.square(16);
+
+//배열 원소에 함수 할당
+var a = new Array(3);
+a[0] = function(x){return x*x;}
+a[1] = 20;
+a[2] = a[0](a[1]);
+
+//객체의 property를 배열로 전달
+function copyPropertyNamesToArray(o,a){
+	if(!a) a=[]; //-> a = a||[];
+	for(var property in o) a.push(property);
+	return a;
+}
+
+//함수를 데이터로 사용하기
+function add(x,y) {return x+y;}
+function substract(x,y){return x-y;}
+function multiply(x,y) {return x*y;}
+function divide(x,y){return x/y;}
+
+//위의 함수를 전달인자로 받아서 사용
+function opeater
+pow:Math.pow //이미 정의된 함수도 사용
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
